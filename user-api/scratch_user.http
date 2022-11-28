@@ -1,0 +1,83 @@
+### 회원 가입 (고객)
+POST http://localhost:8080/signUp/customer
+Content-Type: application/json
+
+{
+  "birth": "2022-10-07",
+  "email": "thgml352@gmail.com",
+  "name": "소희",
+  "password": "1234",
+  "phone": "01000000000"
+}
+
+### 정보 인증 (고객)
+GET http://localhost:8080/signUp/customer/verify?email=thgml352@gamil.com&code=
+
+
+### 로그인 (고객)
+POST http://localhost:8080/signIn/customer
+Content-Type: application/json
+
+{
+  "email": "thgml352@gmail.com",
+  "password": "1234"
+}
+
+
+### 회원 정보 조회 (고객)
+GET http://localhost:8080/customer/getInfo
+Content-Type: application/json
+X-AUTH-TOKEN:
+
+### 잔액 변경 (고객)
+POST http://localhost:8080/customer/balance
+Content-Type: application/json
+X-AUTH-TOKEN:
+
+{
+  "from": "localServer",
+  "message": "예치금 충전",
+  "money": 5000
+}
+
+############################ 셀러
+
+### 회원 가입
+POST http://localhost:8082/signUp/seller
+Content-Type: application/json
+
+{
+  "birth": "2022-10-07",
+  "email": "thgml352123@gmail.com",
+  "name": "소희",
+  "password": "1234",
+  "phone": "01000000000"
+}
+
+### 정보 인증
+GET http://localhost:8082/signUp/seller/verify?email=thgml352123@gmail.com&code=QiBFtDY1Qe
+
+### 로그인
+POST http://localhost:8082/signIn/seller
+Content-Type: application/json
+
+{
+  "email": "thgml352123@gmail.com",
+  "password": "1234"
+}
+
+### 회원 정보 조회
+GET http://localhost:8082/seller/getInfo
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2eEhWUGxwU29SMGkvNXoxVjIxeFhEbWs2eWIyaE1lMjJmRnF2T0xnREY4PSIsImp0aSI6IlN1YkhlS1VSUnJlUVkrV1NPbkJrdGc9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjY1MzA5NDg0LCJleHAiOjE2NjUzOTU4ODR9.OrgGgruIDSndb6dNKZLRAfVFvBXdvQI0nBObWsToR4g
+### 잔액 변경
+POST http://localhost:8082/seller/balance
+Content-Type: application/json
+X-AUTH-TOKEN:
+
+{
+  "from": "localServer",
+  "message": "예치금 충전",
+  "money": 10000
+}
+

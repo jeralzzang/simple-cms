@@ -1,0 +1,128 @@
+### 상품 추가
+POST http://localhost:8080/seller/product
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2eEhWUGxwU29SMGkvNXoxVjIxeFhEbWs2eWIyaE1lMjJmRnF2T0xnREY4PSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjY1MjE4NTQ4LCJleHAiOjE2NjUzMDQ5NDh9.Qcdp1dAW73wisvw32tgbxHNl_Wur09dmCrtuw-8uxYQ
+
+{
+  "description": "string",
+  "items": [
+    {
+      "count": 1,
+      "name": "270",
+      "price": 90000
+    }
+  ],
+  "name": "나이키 데이브레이크"
+}
+
+### 상품 아이템 추가
+POST http://localhost:8080/seller/product/item
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2eEhWUGxwU29SMGkvNXoxVjIxeFhEbWs2eWIyaE1lMjJmRnF2T0xnREY4PSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjY1MjE4NTQ4LCJleHAiOjE2NjUzMDQ5NDh9.Qcdp1dAW73wisvw32tgbxHNl_Wur09dmCrtuw-8uxYQ
+
+
+{
+  "productId": 4,
+  "count": 1,
+  "name": "270",
+  "price": 90000
+}
+
+### 상품 수정
+PUT http://localhost:8080/seller/product
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2eEhWUGxwU29SMGkvNXoxVjIxeFhEbWs2eWIyaE1lMjJmRnF2T0xnREY4PSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjY1MjE4NTQ4LCJleHAiOjE2NjUzMDQ5NDh9.Qcdp1dAW73wisvw32tgbxHNl_Wur09dmCrtuw-8uxYQ
+
+{
+  "description": "나이키 신발",
+  "items": [
+    {
+      "id": 1,
+      "count": 10,
+      "name": "나이키 에어포스100",
+      "price": 150000
+    }
+  ],
+  "id": 1,
+  "name": "나이키 에어포스 한정판"
+}
+
+### 상품 아이템 수정
+PUT http://localhost:8080/seller/product/item
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2eEhWUGxwU29SMGkvNXoxVjIxeFhEbWs2eWIyaE1lMjJmRnF2T0xnREY4PSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjY1MjE4NTQ4LCJleHAiOjE2NjUzMDQ5NDh9.Qcdp1dAW73wisvw32tgbxHNl_Wur09dmCrtuw-8uxYQ
+
+{
+  "id": 1,
+  "count": 12,
+  "name": "나이키 에어포스 150",
+  "price": 170000
+}
+
+### 상품 삭제
+DELETE http://localhost:8080/seller/product?id=2
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2eEhWUGxwU29SMGkvNXoxVjIxeFhEbWs2eWIyaE1lMjJmRnF2T0xnREY4PSIsImp0aSI6IlN1YkhlS1VSUnJlUVkrV1NPbkJrdGc9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjY1MzA5NDg0LCJleHAiOjE2NjUzOTU4ODR9.OrgGgruIDSndb6dNKZLRAfVFvBXdvQI0nBObWsToR4g
+
+### 상품 아이템 삭제
+DELETE http://localhost:8080/seller/product/item?id=7
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2eEhWUGxwU29SMGkvNXoxVjIxeFhEbWs2eWIyaE1lMjJmRnF2T0xnREY4PSIsImp0aSI6IlN1YkhlS1VSUnJlUVkrV1NPbkJrdGc9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjY1MzA5NDg0LCJleHAiOjE2NjUzOTU4ODR9.OrgGgruIDSndb6dNKZLRAfVFvBXdvQI0nBObWsToR4g
+
+### 상품 검색
+GET http://localhost:8080/search/product?name=나이키
+Content-Type: application/json
+
+### 상품 디테일 검색
+GET http://localhost:8080/search/product/detail?productId=3
+Content-Type: application/json
+
+### 카트 추가
+POST http://localhost:8080/customer/cart
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2eEhWUGxwU29SMGkvNXoxVjIxeFhEbWs2eWIyaE1lMjJmRnF2T0xnREY4PSIsImp0aSI6IlN1YkhlS1VSUnJlUVkrV1NPbkJrdGc9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjY1MzA5NDg0LCJleHAiOjE2NjUzOTU4ODR9.OrgGgruIDSndb6dNKZLRAfVFvBXdvQI0nBObWsToR4g
+
+{
+  "description": "string",
+  "id": 1,
+  "items": [
+    {
+      "count": 1,
+      "id": 1,
+      "name": "270",
+      "price": 90000
+    }
+  ],
+  "name": "나이키 데이브레이크"
+}
+
+### 카트 조회
+GET http://localhost:8080/customer/cart
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2eEhWUGxwU29SMGkvNXoxVjIxeFhEbWs2eWIyaE1lMjJmRnF2T0xnREY4PSIsImp0aSI6IlN1YkhlS1VSUnJlUVkrV1NPbkJrdGc9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjY1MzA5NDg0LCJleHAiOjE2NjUzOTU4ODR9.OrgGgruIDSndb6dNKZLRAfVFvBXdvQI0nBObWsToR4g
+
+### 카트 주문
+POST http://localhost:8080/customer/cart/order
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2eEhWUGxwU29SMGkvNXoxVjIxeFhEbWs2eWIyaE1lMjJmRnF2T0xnREY4PSIsImp0aSI6IlN1YkhlS1VSUnJlUVkrV1NPbkJrdGc9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjY1MzA5NDg0LCJleHAiOjE2NjUzOTU4ODR9.OrgGgruIDSndb6dNKZLRAfVFvBXdvQI0nBObWsToR4g
+
+{
+  "customerId": 1,
+  "products": [
+    {
+      "id": 1,
+      "sellerId": 1,
+      "name": "나이키 에어포스 2",
+      "description": "상품 설명",
+      "items": [
+        {
+          "id": 1,
+          "name": "270",
+          "count": 1,
+          "price": 120000
+        }
+      ]
+    }
+  ],
+  "messages": []
+}
